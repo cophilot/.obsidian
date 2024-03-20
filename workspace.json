@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "3dcb8e53b445ad0b",
+    "type": "split",
+    "children": [
+      {
+        "id": "527c9b19ff816a78",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0b9a945b9bb305cf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b56d11e4b1441666",
+    "type": "split",
+    "children": [
+      {
+        "id": "bd7be7d6c1b12600",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "49766fb7cb368230",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d14f8bbeda9fc327",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "bc8a07379d5022dd",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "45c6d249e5c474e7",
+    "type": "split",
+    "children": [
+      {
+        "id": "417986164027b796",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bbdc2727d479b245",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b910be9a09bf40df",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "476b2ba3fcb8dcb6",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "210f1859405a5882",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md"
+              }
+            }
+          },
+          {
+            "id": "2ea96fbabe85acfa",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 465.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": true,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-advanced-slides:Show Slide Preview": false,
+      "open-vscode:VSCode": false,
+      "single-line-paste:Sample Plugin": false
+    }
+  },
+  "active": "0b9a945b9bb305cf",
+  "lastOpenFiles": [
+    "README.md",
+    "test.md",
+    "notes.md",
+    "COP/12_Type_Systems_of_Programming_Languages.md",
+    "COP/13_Reactive_Programming.md",
+    "COP/imgs/Glitches.png",
+    "COP/imgs/Screenshot from 2024-03-02 11-29-33.png",
+    "COP/imgs/Reference_Model.png",
+    "COP/imgs/Screenshot from 2024-03-02 11-25-11.png",
+    "COP/imgs/Software_Taxonomy.png",
+    "COP/imgs/Screenshot from 2024-03-02 11-08-22.png",
+    "COP/11_Monads.md",
+    "COP/imgs/Computation_Assembly_Lines.png",
+    "COP/imgs/Screenshot from 2024-03-02 10-27-58.png",
+    "COP/10_Lazy_Evaluation.md",
+    "COP/imgs/Example_Evaluation.png",
+    "COP/imgs/Screenshot from 2024-03-01 19-43-59.png",
+    "COP/README.md",
+    "COP/9_Introduction_to_Haskell.md",
+    "COP/8_Object-oriented_Languages.md",
+    "COP/7_Memory_management.md",
+    "COP/6_Stateful_Languages.md",
+    "COP/5_Tail_Calls_and_Continuations.md",
+    "COP/4_Recursion.md",
+    "COP/1_Intro.md",
+    "COP/3_Functions.md",
+    "COP/2_Parsing_Conditionals_Names.md",
+    "COP/test.scala",
+    "plugindev",
+    "EKI/7_Logic_and_AI_First-Order_Logic.md",
+    "EKI/13_Planning.md",
+    "EKI/12_Introduction_into_Reinforcement_Learning_and_AlphaZero.md",
+    "EKI/11_Introduction_into_Machine_Learning_and_Neural_Networks.md",
+    "EKI/10_Machine_Ethics.md",
+    "EKI/9_Bayesian_networks.md",
+    "EKI/8_Uncertainty.md",
+    "EKI/6_Logic_and_AI_Propositional_Logic.md",
+    "EKI/5_Constraint_Satisfaction_Problems.md",
+    "EIKI/imgs",
+    "EIKI",
+    "COP/imgs",
+    "COP",
+    "templify-example/web/testExample/styles/testStyle.css",
+    "templify-example/web/testExample/styles",
+    "templify-example/web/testExample/index.html",
+    "templify-example/web/testExample/NOTE"
+  ]
+}
