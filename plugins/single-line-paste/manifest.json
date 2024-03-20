@@ -1,0 +1,11 @@
+{
+	"id": "single-line-paste",
+	"name": "Single Line Paste",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Paste content from the clipboard in a single line.",
+	"author": "Philipp B.",
+	"authorUrl": "https://philipp-bonin.com",
+	"fundingUrl": "https://philipp-bonin.com",
+	"isDesktopOnly": false
+}
