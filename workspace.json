@@ -4,11 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "527c9b19ff816a78",
+        "id": "dcdc494e5b56e988",
         "type": "tabs",
         "children": [
           {
-            "id": "0b9a945b9bb305cf",
+            "id": "92463e705b64d1dc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c8b3f2c304d5c71b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TOC.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "47578d13e3908273",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -19,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -142,7 +167,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 465.5
+    "width": 460.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -152,16 +177,31 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": true,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
-      "open-vscode:VSCode": false,
-      "single-line-paste:Sample Plugin": false
+      "open-vscode:VSCode": false
     }
   },
-  "active": "0b9a945b9bb305cf",
+  "active": "47578d13e3908273",
   "lastOpenFiles": [
+    "benchmarking.md",
+    "TOC.md",
+    "function_flow.png",
     "README.md",
+    "slides/lu767034ybrw.tmp",
+    "slides/lu767034ybm0.tmp",
+    "test_dir-05081344-8ba3d7b8-138e-453c-bcc8-44f2b805145c.zip",
+    "test_dir-05081337-3839c656-5af1-4dd2-acd6-6ca52bb4ff4e.zip",
+    "test_dir-05081336.zip",
+    "test_dir-1715168151.zip",
+    "test_dir-e33e8060-d46a-4b50-8f34-1172bf657f36.zip",
+    "test_dir/test.txt",
+    "test_dir",
+    "slides/lu767034ybkf.tmp",
+    "NOTES.md",
+    "ProjectSctructure.md",
+    "TODO.md",
     "test.md",
     "notes.md",
     "COP/12_Type_Systems_of_Programming_Languages.md",
@@ -177,7 +217,6 @@
     "COP/imgs/Screenshot from 2024-03-02 10-27-58.png",
     "COP/10_Lazy_Evaluation.md",
     "COP/imgs/Example_Evaluation.png",
-    "COP/imgs/Screenshot from 2024-03-01 19-43-59.png",
     "COP/README.md",
     "COP/9_Introduction_to_Haskell.md",
     "COP/8_Object-oriented_Languages.md",
@@ -188,24 +227,9 @@
     "COP/1_Intro.md",
     "COP/3_Functions.md",
     "COP/2_Parsing_Conditionals_Names.md",
-    "COP/test.scala",
-    "plugindev",
     "EKI/7_Logic_and_AI_First-Order_Logic.md",
     "EKI/13_Planning.md",
     "EKI/12_Introduction_into_Reinforcement_Learning_and_AlphaZero.md",
-    "EKI/11_Introduction_into_Machine_Learning_and_Neural_Networks.md",
-    "EKI/10_Machine_Ethics.md",
-    "EKI/9_Bayesian_networks.md",
-    "EKI/8_Uncertainty.md",
-    "EKI/6_Logic_and_AI_Propositional_Logic.md",
-    "EKI/5_Constraint_Satisfaction_Problems.md",
-    "EIKI/imgs",
-    "EIKI",
-    "COP/imgs",
-    "COP",
-    "templify-example/web/testExample/styles/testStyle.css",
-    "templify-example/web/testExample/styles",
-    "templify-example/web/testExample/index.html",
-    "templify-example/web/testExample/NOTE"
+    "EKI/11_Introduction_into_Machine_Learning_and_Neural_Networks.md"
   ]
 }
