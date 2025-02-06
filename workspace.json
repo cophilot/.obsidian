@@ -8,43 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "92463e705b64d1dc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c8b3f2c304d5c71b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TOC.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "47578d13e3908273",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "PROMI/1_foundations_basic_probabilities.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "1_foundations_basic_probabilities"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -63,7 +40,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "PROMI/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -71,7 +48,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for README"
             }
           },
           {
@@ -80,10 +59,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "PROMI/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from README"
             }
           },
           {
@@ -93,8 +74,12 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
-              }
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           }
         ]
@@ -118,8 +103,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -134,7 +122,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -142,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "git-view",
-              "state": {}
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           },
           {
@@ -151,8 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
-              }
+                "file": "PROMI/1_foundations_basic_probabilities.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 1_foundations_basic_probabilities"
             }
           },
           {
@@ -160,7 +157,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -177,28 +176,43 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": true,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "open-vscode:VSCode": false
     }
   },
   "active": "47578d13e3908273",
   "lastOpenFiles": [
+    "PROMI/imgs/etst_image.png",
+    "EKI/sedQ4S78D",
+    "PROMI/1_foundations_basic_probabilities.md",
+    "Pasted image 20250206193429.png",
+    "PROMI/imgs/probability_distributions.png",
+    "PROMI/0_introduction.md",
+    "README.md",
+    "PROMI/README.md",
+    "COP/1_Intro.md",
+    "working-dir/PROMI",
+    "COP/README.md",
+    "COP/6_Stateful_Languages.md",
+    "COP/10_Lazy_Evaluation.md",
+    "IUG/README.md",
+    "PROMI/imgs",
+    "PROMI",
+    "COP.md",
+    "IUG.md",
+    "working-dir/IUG/10.KI.pdf",
+    "working-dir/IUG/9.Arbeitsethik.pdf",
+    "working-dir/IUG/8.Zuverlässigkeit.pdf",
+    "working-dir/IUG/7.pdf",
+    "working-dir/IUG/5+6.Privatsphäre+Überwachung.pdf",
+    "working-dir/IUG/4.GeistigesEigentum.pdf",
+    "IUG/1_einführung.md",
+    "VC/01Einführung.md",
     "benchmarking.md",
     "TOC.md",
     "function_flow.png",
-    "README.md",
-    "slides/lu767034ybrw.tmp",
-    "slides/lu767034ybm0.tmp",
-    "test_dir-05081344-8ba3d7b8-138e-453c-bcc8-44f2b805145c.zip",
-    "test_dir-05081337-3839c656-5af1-4dd2-acd6-6ca52bb4ff4e.zip",
-    "test_dir-05081336.zip",
-    "test_dir-1715168151.zip",
-    "test_dir-e33e8060-d46a-4b50-8f34-1172bf657f36.zip",
-    "test_dir/test.txt",
-    "test_dir",
-    "slides/lu767034ybkf.tmp",
     "NOTES.md",
     "ProjectSctructure.md",
     "TODO.md",
@@ -213,23 +227,7 @@
     "COP/imgs/Software_Taxonomy.png",
     "COP/imgs/Screenshot from 2024-03-02 11-08-22.png",
     "COP/11_Monads.md",
-    "COP/imgs/Computation_Assembly_Lines.png",
-    "COP/imgs/Screenshot from 2024-03-02 10-27-58.png",
-    "COP/10_Lazy_Evaluation.md",
-    "COP/imgs/Example_Evaluation.png",
-    "COP/README.md",
     "COP/9_Introduction_to_Haskell.md",
-    "COP/8_Object-oriented_Languages.md",
-    "COP/7_Memory_management.md",
-    "COP/6_Stateful_Languages.md",
-    "COP/5_Tail_Calls_and_Continuations.md",
-    "COP/4_Recursion.md",
-    "COP/1_Intro.md",
-    "COP/3_Functions.md",
-    "COP/2_Parsing_Conditionals_Names.md",
-    "EKI/7_Logic_and_AI_First-Order_Logic.md",
-    "EKI/13_Planning.md",
-    "EKI/12_Introduction_into_Reinforcement_Learning_and_AlphaZero.md",
-    "EKI/11_Introduction_into_Machine_Learning_and_Neural_Networks.md"
+    "COP/8_Object-oriented_Languages.md"
   ]
 }
