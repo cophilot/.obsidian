@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e44eb5d5de87d59e",
+        "id": "60992302b34a405c",
         "type": "tabs",
         "children": [
           {
-            "id": "0d0c7f698f9559d6",
+            "id": "7bcae4eb1f852090",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -174,20 +174,20 @@
       "open-vscode:VSCode": false
     }
   },
-  "active": "0d0c7f698f9559d6",
+  "active": "7bcae4eb1f852090",
   "lastOpenFiles": [
+    "PROMI/imgs/MarginalDistributions.png",
+    "PROMI/2_foundations_information_theory.md",
+    "PROMI/imgs/JointEntropy.png",
+    "PROMI/imgs/Channel.png",
+    "PROMI/imgs/Quantifying_Uncertainty.png",
     "PROMI/1_foundations_basic_probabilities.md",
     "PROMI/README.md",
-    "PROMI/2_foundations_information_theory.md",
     "PROMI/imgs/CovarianceCorrelation.png",
     "PROMI/imgs/Skewness.png",
     "PROMI/imgs/VarianceStandardDeviation.png",
     "PROMI/imgs/Expectation.png",
     "PROMI/imgs/Bayes_Rule.png",
-    "PROMI/imgs/Conditional_probability.png",
-    "PROMI/imgs/Joint_probability.png",
-    "PROMI/imgs/probability_distributions.png",
-    "PROMI/imgs/Conditional_Independence.png",
-    "PROMI/imgs/Independence.png"
+    "PROMI/imgs/Conditional_probability.png"
   ]
 }

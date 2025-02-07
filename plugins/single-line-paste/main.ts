@@ -117,6 +117,73 @@ export default class MyPlugin extends Plugin {
 				editor.replaceRange("\n\n\n---\n", editor.getCursor());
 			},
 		});
+		this.addCommand({
+			id: "add-doc-overview",
+			name: "Add Document Overview",
+			editorCallback: (editor, view) => {
+				let repoName = undefined;
+				let headings = [];
+				for (let i = 0; i <= editor.lastLine(); i++) {
+					let line = editor.getLine(i);
+
+					const includeFirstLine = false;
+
+					if (line.startsWith("#")) {
+						let level =
+							line.match(/#/g)!.length -
+							(includeFirstLine ? 0 : 1);
+						line = line.replace(/#/g, "");
+						line = line.replace(/\*/g, "").replace(/\`/g, "");
+						if (line.includes("[") && line.includes("]")) {
+							line = line.split("[")[1].split("]")[0];
+						}
+						if (line.startsWith(" ")) line = line.replace(" ", "");
+						if (level == 0 && !includeFirstLine) {
+							repoName = line;
+							continue;
+						}
+						let header = {
+							name: line,
+							level: level,
+						};
+						headings.push(header);
+					}
+				}
+				let overview = "";
+				for (let i in headings) {
+					let line = "";
+					for (let j = 1; j < headings[i].level; j++) line += "    ";
+					let trimmedName = headings[i].name
+						.toLowerCase()
+						.replace(/\./g, "")
+						.replace(/\s/g, "-")
+						.replace(/\&/g, "")
+						.replace(/\(/g, "")
+						.replace(/\)/g, "")
+						.replace(/\]/g, "")
+						.replace(/\[/g, "")
+						.replace(/\_/g, "")
+						.replace(/\>/g, "")
+						.replace(/\</g, "")
+						.replace(/\*/g, "")
+						.replace(/\$/g, "")
+						.replace(/\`/g, "")
+						.replace(/\"/g, "")
+						.replace(/\?/g, "")
+						.replace(/\!/g, "")
+						.replace(/\%/g, "")
+						.replace(/\=/g, "")
+						.replace(/\}/g, "")
+						.replace(/\{/g, "")
+						.replace(/\//g, "");
+					line +=
+						"-   [" + headings[i].name + "](#" + trimmedName + ")";
+					overview += line + "\n";
+				}
+
+				editor.replaceRange(overview, editor.getCursor());
+			},
+		});
 
 		this.addCommand({
 			id: "get-greek-letter",
