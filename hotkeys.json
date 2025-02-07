@@ -22,7 +22,7 @@
       "modifiers": [
         "Alt"
       ],
-      "key": "V"
+      "key": "I"
     }
   ],
   "editor:insert-codeblock": [
@@ -179,22 +179,6 @@
       "key": "C"
     }
   ],
-  "single-line-paste:make-superscript": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "ArrowUp"
-    }
-  ],
-  "single-line-paste:make-subscript": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "ArrowDown"
-    }
-  ],
   "app:reload": [
     {
       "modifiers": [
@@ -210,6 +194,47 @@
         "Alt"
       ],
       "key": "S"
+    }
+  ],
+  "editor:swap-line-down": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "ArrowDown"
+    }
+  ],
+  "editor:swap-line-up": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "ArrowUp"
+    }
+  ],
+  "single-line-paste:make-superscript": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "U"
+    }
+  ],
+  "single-line-paste:make-subscript": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "D"
+    }
+  ],
+  "editor:open-link-in-new-leaf": [],
+  "single-line-paste:get-greek-letter": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "G"
     }
   ]
 }

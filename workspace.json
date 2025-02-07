@@ -177,6 +177,7 @@
   "active": "0d0c7f698f9559d6",
   "lastOpenFiles": [
     "PROMI/1_foundations_basic_probabilities.md",
+    "PROMI/README.md",
     "PROMI/2_foundations_information_theory.md",
     "PROMI/imgs/CovarianceCorrelation.png",
     "PROMI/imgs/Skewness.png",
@@ -187,7 +188,6 @@
     "PROMI/imgs/Joint_probability.png",
     "PROMI/imgs/probability_distributions.png",
     "PROMI/imgs/Conditional_Independence.png",
-    "PROMI/README.md",
     "PROMI/imgs/Independence.png"
   ]
 }
