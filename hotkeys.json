@@ -203,5 +203,13 @@
       ],
       "key": "R"
     }
+  ],
+  "single-line-paste:new-section": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "S"
+    }
   ]
 }

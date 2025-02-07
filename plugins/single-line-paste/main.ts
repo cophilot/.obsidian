@@ -110,6 +110,13 @@ export default class MyPlugin extends Plugin {
 				editor.replaceSelection(`<sup>${selectedText}</sup>`);
 			},
 		});
+		this.addCommand({
+			id: "new-section",
+			name: "Add new Section",
+			editorCallback: (editor, view) => {
+				editor.replaceRange("\n\n\n---\n", editor.getCursor());
+			},
+		});
 
 		this.addCommand({
 			id: "get-greek-letter",
