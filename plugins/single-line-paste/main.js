@@ -99,7 +99,7 @@ var MyPlugin = class extends import_obsidian.Plugin {
       id: "new-section",
       name: "Add new Section",
       editorCallback: (editor, view) => {
-        editor.replaceRange("\n\n\n---\n", editor.getCursor());
+        editor.replaceRange("\n## \n\n\n\n---\n", editor.getCursor());
       }
     });
     this.addCommand({

@@ -114,7 +114,7 @@ export default class MyPlugin extends Plugin {
 			id: "new-section",
 			name: "Add new Section",
 			editorCallback: (editor, view) => {
-				editor.replaceRange("\n\n\n---\n", editor.getCursor());
+				editor.replaceRange("\n## \n\n\n\n---\n", editor.getCursor());
 			},
 		});
 		this.addCommand({

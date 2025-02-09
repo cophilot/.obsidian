@@ -236,5 +236,13 @@
       ],
       "key": "G"
     }
+  ],
+  "single-line-paste:add-doc-overview": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "O"
+    }
   ]
 }
