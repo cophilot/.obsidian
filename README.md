@@ -3,5 +3,5 @@
 ## Install
 
 ```bash
-curl -s https://raw.githubusercontent.com/cophilot/.obsidian/main/install | bash -s
+rm -rf .obsidian && git clone https://github.com/cophilot/.obsidian .obsidian
 ```
