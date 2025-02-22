@@ -244,5 +244,13 @@
       ],
       "key": "O"
     }
+  ],
+  "app:open-vault": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "R"
+    }
   ]
 }
