@@ -266,5 +266,33 @@
       ],
       "key": "`"
     }
+  ],
+  "single-line-paste:make-multi-world-bold": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "B"
+    }
+  ],
+  "single-line-paste:make-multi-world-code": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "C"
+    }
+  ],
+  "obsidian-editor-shortcuts:addCursorsToSelectionEnds": [],
+  "single-line-paste:make-multi-world-italic": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "I"
+    }
   ]
 }

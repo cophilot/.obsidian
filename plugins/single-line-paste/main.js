@@ -78,6 +78,45 @@ var MyPlugin = class extends import_obsidian.Plugin {
       }
     });
     this.addCommand({
+      id: "make-multi-world-bold",
+      name: "Make Multi-Word Bold",
+      editorCallback: (editor, view) => {
+        const SEPARATOR = "**";
+        const SEPARATOR_REGEX = /\*\*/g;
+        makeMultiWorldTransformation(
+          editor,
+          SEPARATOR,
+          SEPARATOR_REGEX
+        );
+      }
+    });
+    this.addCommand({
+      id: "make-multi-world-italic",
+      name: "Make Multi-Word Italic",
+      editorCallback: (editor, view) => {
+        const SEPARATOR = "*";
+        const SEPARATOR_REGEX = /\*/g;
+        makeMultiWorldTransformation(
+          editor,
+          SEPARATOR,
+          SEPARATOR_REGEX
+        );
+      }
+    });
+    this.addCommand({
+      id: "make-multi-world-code",
+      name: "Make Multi-Word Code",
+      editorCallback: (editor, view) => {
+        const SEPARATOR = "`";
+        const SEPARATOR_REGEX = /\`/g;
+        makeMultiWorldTransformation(
+          editor,
+          SEPARATOR,
+          SEPARATOR_REGEX
+        );
+      }
+    });
+    this.addCommand({
       id: "make-superscript",
       name: "Make Superscript",
       editorCallback: (editor, view) => {
@@ -173,6 +212,57 @@ var MyPlugin = class extends import_obsidian.Plugin {
     await this.saveData(this.settings);
   }
 };
+function makeMultiWorldTransformation(editor, SEPARATOR, SEPARATOR_REGEX) {
+  const lineText = editor.getLine(editor.getCursor().line);
+  const cursorPos = editor.getCursor();
+  let startCh = 0;
+  for (let i = cursorPos.ch - 1; i >= 0; i--) {
+    if (lineText[i] === " ") {
+      startCh = i + 1;
+      break;
+    }
+  }
+  let endCh = lineText.length;
+  let selectedText = "";
+  let currentCursor = cursorPos.ch;
+  const countSeps = (lineText.substring(0, cursorPos.ch).match(SEPARATOR_REGEX) || []).length;
+  if (countSeps % 2 === 1) {
+    const nextIndex = lineText.indexOf(SEPARATOR, cursorPos.ch);
+    if (nextIndex !== -1 && nextIndex <= lineText.length - SEPARATOR.length) {
+      currentCursor = nextIndex + SEPARATOR.length;
+    }
+  }
+  while (true) {
+    for (let i = currentCursor; i < lineText.length; i++) {
+      if (lineText[i] === " ") {
+        endCh = i;
+        currentCursor = i + 1;
+        break;
+      }
+    }
+    selectedText = lineText.substring(startCh, endCh).trim();
+    if (endCh === lineText.length) {
+      break;
+    }
+    if (selectedText.endsWith(SEPARATOR)) {
+      continue;
+    }
+    break;
+  }
+  editor.setSelection(
+    {
+      line: cursorPos.line,
+      ch: startCh
+    },
+    {
+      line: cursorPos.line,
+      ch: endCh
+    }
+  );
+  selectedText = selectedText.replace(SEPARATOR_REGEX, "");
+  editor.replaceSelection(SEPARATOR + selectedText + SEPARATOR);
+  editor.setCursor(cursorPos);
+}
 var SampleSettingTab = class extends import_obsidian.PluginSettingTab {
   constructor(app, plugin) {
     super(app, plugin);
