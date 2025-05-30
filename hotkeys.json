@@ -12,7 +12,8 @@
   "editor:toggle-bold": [
     {
       "modifiers": [
-        "Alt"
+        "Alt",
+        "Shift"
       ],
       "key": "B"
     }
@@ -267,15 +268,6 @@
       "key": "`"
     }
   ],
-  "single-line-paste:make-multi-world-bold": [
-    {
-      "modifiers": [
-        "Alt",
-        "Shift"
-      ],
-      "key": "B"
-    }
-  ],
   "single-line-paste:make-multi-world-code": [
     {
       "modifiers": [
@@ -302,6 +294,14 @@
         "Mod"
       ],
       "key": "V"
+    }
+  ],
+  "single-line-paste:make-multi-world-bold": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "B"
     }
   ]
 }
