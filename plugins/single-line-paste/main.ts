@@ -9,8 +9,6 @@ import {
 	Setting,
 } from "obsidian";
 
-// Remember to rename these classes and interfaces!
-
 interface MyPluginSettings {
 	mySetting: string;
 }
@@ -65,6 +63,115 @@ export default class MyPlugin extends Plugin {
 				singleLinePaste(editor, (s: string) => {
 					return s.replace(/[^a-zA-Z0-9 ]/g, "").trim();
 				});
+			},
+		});
+		
+		this.addCommand({
+			id: "sync-obsidian-folder",
+			name: "Sync the .obsidian folder",
+			editorCallback: (editor: Editor, view: MarkdownView) => {
+				const workspacePath = getWorkspacePath(this.app);
+
+				const { exec } = require("child_process");
+
+				const command = `cd "${workspacePath}/.obsidian" && git pull`;
+
+				exec(
+					command,
+					(error: Error, stdout: string, stderr: string) => {
+						if (error) {
+							new Notice(`Error syncing .obsidian folder: ${error.message}`);
+							return;
+						}
+						if (stderr) {
+							new Notice(`Stderr: ${stderr}`);
+							return;
+						}
+						if (stdout) {
+							new Notice(`Sync completed: ${stdout.trim()}`);
+						}
+					}
+				);
+			},
+		});
+
+		this.addCommand({
+			id: "sync-obsidian-folder-up",
+			name: "Sync the .obsidian folder (upstream)",
+			editorCallback: (editor: Editor, view: MarkdownView) => {
+				const workspacePath = getWorkspacePath(this.app);
+
+				const { exec } = require("child_process");
+
+				const command = `cd "${workspacePath}/.obsidian" && git add . && git reset workspace.json && git commit -m "Sync .obsidian folder" && git push`;
+
+				exec(
+					command,
+					(error: Error, stdout: string, stderr: string) => {
+						if (error) {
+							new Notice(`Error syncing .obsidian folder: ${error.message}`);
+							return;
+						}
+						if (stderr) {
+							new Notice(`Stderr: ${stderr}`);
+							return;
+						}
+						if (stdout) {
+							new Notice(`Sync completed: ${stdout.trim()}`);
+						}
+					}
+				);
+			},
+		});
+
+		this.addCommand({
+			id: "run-linux-command",
+			name: "Run Linux Command",
+			editorCallback: (editor: Editor, view: MarkdownView) => {
+				let command = editor.getSelection();
+
+				if (command.length === 0) {
+					command = editor.getLine(editor.getCursor().line);
+					editor.setSelection(
+						{
+							line: editor.getCursor().line,
+							ch: 0,
+						},
+						{
+							line: editor.getCursor().line,
+							ch: command.length,
+						}
+					);
+					command = command.trim();
+				}
+
+				const workspacePath = getWorkspacePath(this.app);
+
+				new Notice(
+					`Running command: ${command} in workspace: ${workspacePath}`
+				);
+				const commandWithPath = `cd "${workspacePath}" && ${command}`;
+
+				const { exec } = require("child_process");
+
+				exec(
+					commandWithPath,
+					(error: Error, stdout: string, stderr: string) => {
+						if (error) {
+							new Notice(`Error: ${error.message}`);
+							return;
+						}
+						if (stderr) {
+							new Notice(`Stderr: ${stderr}`);
+							return;
+						}
+						if (stdout) {
+							editor.replaceSelection(`${stdout.trim()}`);
+						} else {
+							new Notice("No output from command.");
+						}
+					}
+				);
 			},
 		});
 
@@ -285,13 +392,16 @@ export default class MyPlugin extends Plugin {
 	}
 }
 
-function singleLinePaste(editor: Editor, strFn: ((_s: string) => string) | undefined = undefined) {
+function singleLinePaste(
+	editor: Editor,
+	strFn: ((_s: string) => string) | undefined = undefined
+) {
 	const clipboard = navigator.clipboard;
 	clipboard
 		.readText()
 		.then((text) => {
 			let newText = text.replace(/\n/g, " ");
-			if(strFn) {
+			if (strFn) {
 				newText = strFn(newText);
 			}
 			editor.replaceRange(newText, editor.getCursor());
@@ -299,6 +409,10 @@ function singleLinePaste(editor: Editor, strFn: ((_s: string) => string) | undef
 		.catch((err) => {
 			console.error("Failed to read clipboard contents: ", err);
 		});
+}
+
+function getWorkspacePath(app: App): string {
+	return (app.vault.adapter as any).basePath;
 }
 
 function makeMultiWorldTransformation(
