@@ -47,15 +47,15 @@ var MyPlugin = class extends import_obsidian.Plugin {
       id: "paste-single-line",
       name: "Paste single line",
       editorCallback: (editor, view) => {
-        const clipboard = navigator.clipboard;
-        clipboard.readText().then((text) => {
-          const newText = text.replace(/\n/g, " ");
-          editor.replaceRange(newText, editor.getCursor());
-        }).catch((err) => {
-          console.error(
-            "Failed to read clipboard contents: ",
-            err
-          );
+        singleLinePaste(editor);
+      }
+    });
+    this.addCommand({
+      id: "paste-single-line-without-special-chars",
+      name: "Paste single line without special characters",
+      editorCallback: (editor, view) => {
+        singleLinePaste(editor, (s) => {
+          return s.replace(/[^a-zA-Z0-9 ]/g, "").trim();
         });
       }
     });
@@ -212,6 +212,18 @@ var MyPlugin = class extends import_obsidian.Plugin {
     await this.saveData(this.settings);
   }
 };
+function singleLinePaste(editor, strFn = void 0) {
+  const clipboard = navigator.clipboard;
+  clipboard.readText().then((text) => {
+    let newText = text.replace(/\n/g, " ");
+    if (strFn) {
+      newText = strFn(newText);
+    }
+    editor.replaceRange(newText, editor.getCursor());
+  }).catch((err) => {
+    console.error("Failed to read clipboard contents: ", err);
+  });
+}
 function makeMultiWorldTransformation(editor, SEPARATOR, SEPARATOR_REGEX) {
   const lineText = editor.getLine(editor.getCursor().line);
   const cursorPos = editor.getCursor();
@@ -233,8 +245,8 @@ function makeMultiWorldTransformation(editor, SEPARATOR, SEPARATOR_REGEX) {
     }
   }
   while (true) {
-    for (let i = currentCursor; i < lineText.length; i++) {
-      if (lineText[i] === " ") {
+    for (let i = currentCursor; i <= lineText.length; i++) {
+      if (lineText[i] === " " || i === lineText.length) {
         endCh = i;
         currentCursor = i + 1;
         break;
@@ -242,6 +254,8 @@ function makeMultiWorldTransformation(editor, SEPARATOR, SEPARATOR_REGEX) {
     }
     selectedText = lineText.substring(startCh, endCh).trim();
     if (endCh === lineText.length) {
+      endCh = lineText.length;
+      selectedText = lineText.substring(startCh, endCh).trim();
       break;
     }
     if (selectedText.endsWith(SEPARATOR)) {

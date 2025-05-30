@@ -54,21 +54,17 @@ export default class MyPlugin extends Plugin {
 			id: "paste-single-line",
 			name: "Paste single line",
 			editorCallback: (editor: Editor, view: MarkdownView) => {
-				// get content from clipboard
-				const clipboard = navigator.clipboard;
-				clipboard
-					.readText()
-					.then((text) => {
-						// split into lines
-						const newText = text.replace(/\n/g, " ");
-						editor.replaceRange(newText, editor.getCursor());
-					})
-					.catch((err) => {
-						console.error(
-							"Failed to read clipboard contents: ",
-							err
-						);
-					});
+				singleLinePaste(editor);
+			},
+		});
+
+		this.addCommand({
+			id: "paste-single-line-without-special-chars",
+			name: "Paste single line without special characters",
+			editorCallback: (editor: Editor, view: MarkdownView) => {
+				singleLinePaste(editor, (s: string) => {
+					return s.replace(/[^a-zA-Z0-9 ]/g, "").trim();
+				});
 			},
 		});
 
@@ -119,7 +115,7 @@ export default class MyPlugin extends Plugin {
 				);
 			},
 		});
-		
+
 		this.addCommand({
 			id: "make-multi-world-code",
 			name: "Make Multi-Word Code",
@@ -289,6 +285,22 @@ export default class MyPlugin extends Plugin {
 	}
 }
 
+function singleLinePaste(editor: Editor, strFn: ((_s: string) => string) | undefined = undefined) {
+	const clipboard = navigator.clipboard;
+	clipboard
+		.readText()
+		.then((text) => {
+			let newText = text.replace(/\n/g, " ");
+			if(strFn) {
+				newText = strFn(newText);
+			}
+			editor.replaceRange(newText, editor.getCursor());
+		})
+		.catch((err) => {
+			console.error("Failed to read clipboard contents: ", err);
+		});
+}
+
 function makeMultiWorldTransformation(
 	editor: Editor,
 	SEPARATOR: string,
@@ -324,8 +336,8 @@ function makeMultiWorldTransformation(
 	}
 
 	while (true) {
-		for (let i = currentCursor; i < lineText.length; i++) {
-			if (lineText[i] === " ") {
+		for (let i = currentCursor; i <= lineText.length; i++) {
+			if (lineText[i] === " " || i === lineText.length) {
 				endCh = i;
 				currentCursor = i + 1;
 				break;
@@ -335,6 +347,8 @@ function makeMultiWorldTransformation(
 		selectedText = lineText.substring(startCh, endCh).trim();
 
 		if (endCh === lineText.length) {
+			endCh = lineText.length;
+			selectedText = lineText.substring(startCh, endCh).trim();
 			break;
 		}
 

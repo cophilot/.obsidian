@@ -294,5 +294,14 @@
       ],
       "key": "I"
     }
+  ],
+  "single-line-paste:paste-single-line-without-special-chars": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "V"
+    }
   ]
 }
