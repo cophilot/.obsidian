@@ -65,7 +65,7 @@ export default class MyPlugin extends Plugin {
 				});
 			},
 		});
-		
+
 		this.addCommand({
 			id: "sync-obsidian-folder",
 			name: "Sync the .obsidian folder",
@@ -80,7 +80,9 @@ export default class MyPlugin extends Plugin {
 					command,
 					(error: Error, stdout: string, stderr: string) => {
 						if (error) {
-							new Notice(`Error syncing .obsidian folder: ${error.message}`);
+							new Notice(
+								`Error syncing .obsidian folder: ${error.message}`
+							);
 							return;
 						}
 						if (stderr) {
@@ -109,7 +111,9 @@ export default class MyPlugin extends Plugin {
 					command,
 					(error: Error, stdout: string, stderr: string) => {
 						if (error) {
-							new Notice(`Error syncing .obsidian folder: ${error.message}`);
+							new Notice(
+								`Error syncing .obsidian folder: ${error.message}`
+							);
 							return;
 						}
 						if (stderr) {
@@ -268,7 +272,8 @@ export default class MyPlugin extends Plugin {
 			name: "Add Document Overview",
 			editorCallback: (editor, view) => {
 				let repoName = undefined;
-				let headings = [];
+				let headings: { name: string; level: number; count: number }[] =
+					[];
 				for (let i = 0; i <= editor.lastLine(); i++) {
 					let line = editor.getLine(i);
 
@@ -288,9 +293,18 @@ export default class MyPlugin extends Plugin {
 							repoName = line;
 							continue;
 						}
+						if (line.toLowerCase() === "overview") {
+							continue;
+						}
+						const allNames: string[] = headings.map((h) => h.name);
+						const count = allNames.filter(
+							(name: string) => name === line
+						).length;
+
 						let header = {
 							name: line,
 							level: level,
+							count: count,
 						};
 						headings.push(header);
 					}
@@ -322,6 +336,9 @@ export default class MyPlugin extends Plugin {
 						.replace(/\}/g, "")
 						.replace(/\{/g, "")
 						.replace(/\//g, "");
+					if (headings[i].count > 0) {
+						trimmedName += "-" + headings[i].count;
+					}
 					line +=
 						"-   [" + headings[i].name + "](#" + trimmedName + ")";
 					overview += line + "\n";
