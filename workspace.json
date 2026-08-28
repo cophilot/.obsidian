@@ -4,24 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "32007fa977329263",
+        "id": "eca0eaa6ec2354ff",
         "type": "tabs",
         "children": [
           {
-            "id": "4152dbdac48098e7",
+            "id": "04777fca305d0dbf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SDMS/2_indexing.md",
+                "file": "notes/Dekker.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2_indexing"
+              "title": "Dekker"
+            }
+          },
+          {
+            "id": "43e5bf1840e9339e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "notes/MeetingNotes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "MeetingNotes"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -120,7 +135,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -176,19 +193,25 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "4152dbdac48098e7",
+  "active": "43e5bf1840e9339e",
   "lastOpenFiles": [
-    "sedjJZqLS",
-    "IVVA/sedSaWoSw",
-    "IVVA/sed0XuZ3z",
-    "IVVA/sedqMyyTs",
-    "IVVA/sedQ748yS",
-    "FSVS/sedZu3IpX",
-    "CRICOM/sedldRNYZ",
-    "VC/sedWPnJkX",
-    "VC/sedktNxaX",
-    "SPSTS/sedjagHzT",
-    "SPSTS/sedH7gCFR",
+    "notes/Dekker.md",
+    "notes/MeetingNotes.md",
+    "notes/README.md",
+    "slides/lu637813p2ukt.tmp",
+    "slides/mt-proposal.odp",
+    "slides/MT_template.odp",
+    "slides/templates/MT_template (Copy).odp",
+    "slides/templates/MT_template.odp",
+    "slides/templates/lu545715n5l3o.tmp",
+    "slides/templates",
+    "slides",
+    "MT/Dekker.md",
+    "MT/imgs/Pasted image 20260812112207.png",
+    "MT/imgs/Pasted image 20260812112134.png",
+    "MT/MT.md",
+    "MT/imgs",
+    "MT",
     "_imgs/UniCSLogo.png",
     "SDMS/imgs/ClusteredvsUnclusteredIndex.png",
     "SDMS/2_indexing.md",
@@ -205,9 +228,7 @@
     "IVVA/imgs/vis-channels.png",
     "IVVA/1_einführung_in_die_informationsvisualisierung.md",
     "IVVA/imgs/uebersicht-Datenstrukturen.png",
-    "IVVA/imgs/uebersicht-Datentypen.png",
     "SDMS/2_storage_single_node_d_b_m_ss.md",
-    "SDMS/imgs/data-access-with-buffer.png",
     "SDMS/1_introduction.md",
     "FSVS/1_the_java_modeling_language_i.md",
     "CRICOM/README.md",
@@ -219,10 +240,6 @@
     "PROMI/2_foundations_information_theory.md",
     "SPSTS/abbreviations.md",
     "SPSTS/5_propellant_management_injection_combustion_chamber_processes.md",
-    "SPSTS/2_fundamentals_of_rocket_propulsion.md",
-    "SPSTS/README.md",
-    "SPSTS/1_introduction_to_space_transportation.md",
-    "SPSTS/0_abbreviations.md",
-    "PROMI/3_modeling_probability_distributions.md"
+    "SPSTS/2_fundamentals_of_rocket_propulsion.md"
   ]
 }

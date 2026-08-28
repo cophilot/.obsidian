@@ -30,7 +30,7 @@ export default class MyPlugin extends Plugin {
 			(evt: MouseEvent) => {
 				// Called when the user clicks the icon.
 				new Notice("This is a notice!");
-			}
+			},
 		);
 		// Perform additional things with the ribbon
 		ribbonIconEl.addClass("my-plugin-ribbon-class");
@@ -81,7 +81,7 @@ export default class MyPlugin extends Plugin {
 					(error: Error, stdout: string, stderr: string) => {
 						if (error) {
 							new Notice(
-								`Error syncing .obsidian folder: ${error.message}`
+								`Error syncing .obsidian folder: ${error.message}`,
 							);
 							return;
 						}
@@ -92,7 +92,7 @@ export default class MyPlugin extends Plugin {
 						if (stdout) {
 							new Notice(`Sync completed: ${stdout.trim()}`);
 						}
-					}
+					},
 				);
 			},
 		});
@@ -112,7 +112,7 @@ export default class MyPlugin extends Plugin {
 					(error: Error, stdout: string, stderr: string) => {
 						if (error) {
 							new Notice(
-								`Error syncing .obsidian folder: ${error.message}`
+								`Error syncing .obsidian folder: ${error.message}`,
 							);
 							return;
 						}
@@ -123,7 +123,7 @@ export default class MyPlugin extends Plugin {
 						if (stdout) {
 							new Notice(`Sync completed: ${stdout.trim()}`);
 						}
-					}
+					},
 				);
 			},
 		});
@@ -144,7 +144,7 @@ export default class MyPlugin extends Plugin {
 						{
 							line: editor.getCursor().line,
 							ch: command.length,
-						}
+						},
 					);
 					command = command.trim();
 				}
@@ -152,7 +152,7 @@ export default class MyPlugin extends Plugin {
 				const workspacePath = getWorkspacePath(this.app);
 
 				new Notice(
-					`Running command: ${command} in workspace: ${workspacePath}`
+					`Running command: ${command} in workspace: ${workspacePath}`,
 				);
 				const commandWithPath = `cd "${workspacePath}" && ${command}`;
 
@@ -174,7 +174,7 @@ export default class MyPlugin extends Plugin {
 						} else {
 							new Notice("No output from command.");
 						}
-					}
+					},
 				);
 			},
 		});
@@ -191,7 +191,7 @@ export default class MyPlugin extends Plugin {
 							line: editor.getCursor().line,
 							ch: editor.getCursor().ch - 1,
 						},
-						editor.getCursor()
+						editor.getCursor(),
 					);
 					selectedText = editor.getSelection();
 				}
@@ -208,7 +208,7 @@ export default class MyPlugin extends Plugin {
 				makeMultiWorldTransformation(
 					editor,
 					SEPARATOR,
-					SEPARATOR_REGEX
+					SEPARATOR_REGEX,
 				);
 			},
 		});
@@ -222,7 +222,7 @@ export default class MyPlugin extends Plugin {
 				makeMultiWorldTransformation(
 					editor,
 					SEPARATOR,
-					SEPARATOR_REGEX
+					SEPARATOR_REGEX,
 				);
 			},
 		});
@@ -236,7 +236,7 @@ export default class MyPlugin extends Plugin {
 				makeMultiWorldTransformation(
 					editor,
 					SEPARATOR,
-					SEPARATOR_REGEX
+					SEPARATOR_REGEX,
 				);
 			},
 		});
@@ -253,7 +253,7 @@ export default class MyPlugin extends Plugin {
 							line: editor.getCursor().line,
 							ch: editor.getCursor().ch - 1,
 						},
-						editor.getCursor()
+						editor.getCursor(),
 					);
 					selectedText = editor.getSelection();
 				}
@@ -265,6 +265,19 @@ export default class MyPlugin extends Plugin {
 			name: "Add new Section",
 			editorCallback: (editor, view) => {
 				editor.replaceRange("\n## \n\n\n\n---\n", editor.getCursor());
+			},
+		});
+		this.addCommand({
+			id: "new-meeting-note-section",
+			name: "Add new Meeting Note Section",
+			editorCallback: (editor, view) => {
+				const dateString = new Date().toISOString().split("T")[0];
+				editor.replaceRange(
+					"\n# " +
+						dateString +
+						"\n\n## TODO\n\n- [ ] x\n\n## Notes\n\n- x\n\n---\n",
+					editor.getCursor(),
+				);
 			},
 		});
 		this.addCommand({
@@ -298,7 +311,7 @@ export default class MyPlugin extends Plugin {
 						}
 						const allNames: string[] = headings.map((h) => h.name);
 						const count = allNames.filter(
-							(name: string) => name === line
+							(name: string) => name === line,
 						).length;
 
 						let header = {
@@ -390,7 +403,7 @@ export default class MyPlugin extends Plugin {
 
 		// When registering intervals, this function will automatically clear the interval when the plugin is disabled.
 		this.registerInterval(
-			window.setInterval(() => console.log("setInterval"), 5 * 60 * 1000)
+			window.setInterval(() => console.log("setInterval"), 5 * 60 * 1000),
 		);
 	}
 
@@ -400,7 +413,7 @@ export default class MyPlugin extends Plugin {
 		this.settings = Object.assign(
 			{},
 			DEFAULT_SETTINGS,
-			await this.loadData()
+			await this.loadData(),
 		);
 	}
 
@@ -411,7 +424,7 @@ export default class MyPlugin extends Plugin {
 
 function singleLinePaste(
 	editor: Editor,
-	strFn: ((_s: string) => string) | undefined = undefined
+	strFn: ((_s: string) => string) | undefined = undefined,
 ) {
 	const clipboard = navigator.clipboard;
 	clipboard
@@ -435,7 +448,7 @@ function getWorkspacePath(app: App): string {
 function makeMultiWorldTransformation(
 	editor: Editor,
 	SEPARATOR: string,
-	SEPARATOR_REGEX: RegExp
+	SEPARATOR_REGEX: RegExp,
 ) {
 	const lineText = editor.getLine(editor.getCursor().line);
 	const cursorPos = editor.getCursor();
@@ -498,7 +511,7 @@ function makeMultiWorldTransformation(
 		{
 			line: cursorPos.line,
 			ch: endCh,
-		}
+		},
 	);
 
 	selectedText = selectedText.replace(SEPARATOR_REGEX, "");
@@ -547,7 +560,7 @@ class SampleSettingTab extends PluginSettingTab {
 					.onChange(async (value) => {
 						this.plugin.settings.mySetting = value;
 						await this.plugin.saveSettings();
-					})
+					}),
 			);
 	}
 }
@@ -702,7 +715,7 @@ export class GreekLetterModal extends Modal {
 					this.uppercase = !this.uppercase;
 					// rerender the modal
 					this.onOpen();
-				})
+				}),
 		);
 
 		// display the buttons as a grid
@@ -726,17 +739,17 @@ export class GreekLetterModal extends Modal {
 							" " +
 							(this.uppercase
 								? letter.symbolUpper
-								: letter.symbolLower)
+								: letter.symbolLower),
 					)
 					.onClick(() => {
 						this.close();
 						this.onSubmit(
 							this.uppercase
 								? letter.symbolUpper
-								: letter.symbolLower
+								: letter.symbolLower,
 						);
 					})
-					.setClass("greek-letter-btn")
+					.setClass("greek-letter-btn"),
 			);
 		});
 	}

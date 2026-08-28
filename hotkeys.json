@@ -312,5 +312,13 @@
       ],
       "key": "R"
     }
+  ],
+  "single-line-paste:new-meeting-note-section": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "M"
+    }
   ]
 }
